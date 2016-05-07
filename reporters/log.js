@@ -13,7 +13,6 @@ var gutil = require('gulp-util'),
 module.exports = function() {
     return through.obj(function(file, enc, callback) {
         var report = file.phpmdReport || {};
-        console.log(report);
         if (report.error) {
             var message = 'PHP Mess Detector found a ' + chalk.yellow('problem')
                 + ' in ' + chalk.magenta(file.path) + '\n'
