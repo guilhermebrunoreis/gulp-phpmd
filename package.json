@@ -5,15 +5,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kid-icarus/gulp-phpmd.git"
+    "url": "https://github.com/timneutkens/gulp-phpmd"
   },
   "bugs": {
-    "url": "https://github.com/kid-icarus/gulp-phpmd/issues"
+    "url": "https://github.com/timneutkens/gulp-phpmd/issues"
   },
-  "author": {
+  "authors": [{
     "name": "Ryan Kois",
     "email": "ryan.kois@gmail.com"
-  },
+  },{
+    "name": "Tim Neutkens",
+    "email": "tim@timneutkens.nl"
+  }],
   "main": "index.js",
   "keywords": [
     "gulpplugin",
