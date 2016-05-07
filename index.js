@@ -5,23 +5,23 @@ var exec = require('child_process').exec
 /**
  * Builds shell command for PHPMD according to specified options.
  */
-var buildCommand = function(opt) {
-  var opt = opt || {}
-  var command = opt.bin || 'phpmd'
+var buildCommand = function(file, options) {
+  options = options || {}
+  var command = (options.bin || 'phpmd') + ' ' + file.path
 
-  if (opt.hasOwnProperty('format')) {
-    command += ' ' + opt.format + ' '
+  if (options.hasOwnProperty('format')) {
+    command += ' ' + options.format + ' '
   }
 
-  if (opt.hasOwnProperty('ruleset')) {
-    command += ' ' + opt.ruleset + ' '
+  if (options.hasOwnProperty('ruleset')) {
+    command += ' ' + options.ruleset + ' '
   }
 
-  if (opt.hasOwnProperty('minimumpriority')) {
-    command += ' --minimumpriority="' + opt.minimumpriority + '"'
+  if (options.hasOwnProperty('minimumpriority')) {
+    command += ' --minimumpriority="' + options.minimumpriority + '"'
   }
 
-  if (opt.hasOwnProperty('strict')) {
+  if (options.hasOwnProperty('strict')) {
     command += ' --strict'
   }
 
@@ -47,7 +47,8 @@ var phpmdPlugin = function(options) {
     }
 
     // Run PHPMD
-    var phpmd = exec(buildCommand(options), function(error, stdout, stderr) {
+    var phpmd = exec(buildCommand(file, options), function(error, stdout, stderr) {
+
       var report = {
         error: false,
         output: ''

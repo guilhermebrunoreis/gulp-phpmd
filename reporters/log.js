@@ -6,16 +6,16 @@ var gutil = require('gulp-util'),
  * Returns "log" reporter.
  *
  * The "log" reporter, according to its name, logs to the console all problems
- * that PHP Code Sniffer found.
+ * that PHP Mess Detector found.
  *
  * @returns {Function}
  */
 module.exports = function() {
     return through.obj(function(file, enc, callback) {
-        var report = file.phpcsReport || {};
-
+        var report = file.phpmdReport || {};
+        console.log(report);
         if (report.error) {
-            var message = 'PHP Code Sniffer found a ' + chalk.yellow('problem')
+            var message = 'PHP Mess Detector found a ' + chalk.yellow('problem')
                 + ' in ' + chalk.magenta(file.path) + '\n'
                 + 'Message:\n    '
                 + report.error + '\n    '

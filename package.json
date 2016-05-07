@@ -1,6 +1,6 @@
 {
   "name": "gulp-phpmd-plugin",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "PHP Mess Detector plugin for Gulp",
   "license": "MIT",
   "repository": {
