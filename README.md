@@ -1,6 +1,8 @@
-# gulp-phpmd [![NPM version](https://badge.fury.io/js/gulp-phpmd.png)](https://www.npmjs.org/package/gulp-phpmd)
+# gulp-phpmd
 
-> A gulp plugin for running [PHP Mess Detector](https://github.com/squizlabs/PHP_CodeSniffer).
+This is a fork of [gulp-phpmd](https://github.com/kid-icarus/gulp-phpmd) created because the original wasn't functioning.
+
+> A gulp plugin for running [PHP Mess Detector](https://github.com/phpmd/phpmd).
 
 Derivative work of Dmitriy S. Simushev's [gulp-phpcs](https://github.com/JustBlackBird/gulp-phpcs)
 ##Requirements
@@ -8,7 +10,7 @@ Derivative work of Dmitriy S. Simushev's [gulp-phpcs](https://github.com/JustBla
 
 ##Installation
 ```shell
-npm install gulp-phpmd --save-dev
+npm install gulp-phpmd-plugin --save-dev
 ```
 
 ## Usage
@@ -25,7 +27,9 @@ gulp.task('default', function () {
             format: 'text',
         }))
         // Log all problems that was found
-        .pipe(phpmd.reporter('log'));
+        .pipe(phpmd.reporter('log'))
+        // Fail if there is an error
+        .pipe(phpmd.reporter('fail'))
 });
 ```
 
