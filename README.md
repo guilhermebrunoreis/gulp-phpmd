@@ -6,7 +6,7 @@ This is a fork of [gulp-phpmd](https://github.com/kid-icarus/gulp-phpmd) created
 
 Derivative work of Dmitriy S. Simushev's [gulp-phpcs](https://github.com/JustBlackBird/gulp-phpcs)
 ##Requirements
- - [PHP Mess Detector](https://github.com/squizlabs/php_codesniffer#installation)
+ - [PHP Mess Detector](https://github.com/phpmd/phpmd)
 
 ##Installation
 ```shell
