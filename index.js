@@ -65,10 +65,6 @@ var phpmdPlugin = function(options) {
       stream.push(file)
       callback()
     })
-
-    // Pass content of the file as STDIN to PHPMD
-    phpmd.stdin.write(file.contents)
-    phpmd.stdin.end()
   })
 }
 
